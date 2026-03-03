@@ -8,7 +8,6 @@ API_KEY = "diNv0vCTVUTtrbM9wmSPbvgtgReflUM54F011kvD"
 
 BASE_URL = "https://api.nasa.gov/planetary/apod"
 
-
 @app.route('/')
 def home():
     """
