@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
@@ -7,10 +7,19 @@ app = Flask(__name__)
 API_KEY = "diNv0vCTVUTtrbM9wmSPbvgtgReflUM54F011kvD"
 BASE_URL = "https://api.nasa.gov/planetary/apod"
 
+
 @app.route('/')
 def home():
     """
-    Returns today's Astronomy Picture of the Day
+    Renders the main HTML page
+    """
+    return render_template("index.html")
+
+
+@app.route('/api/today')
+def get_today():
+    """
+    Returns today's Astronomy Picture of the Day as JSON
     """
     params = {
         "api_key": API_KEY
@@ -19,10 +28,12 @@ def home():
     response = requests.get(BASE_URL, params=params)
     return jsonify(response.json())
 
+
 @app.route('/search')
 def search():
     """
     Example: /search?date=2024-01-01
+    Returns APOD for a specific date
     """
     date = request.args.get("date")
 
