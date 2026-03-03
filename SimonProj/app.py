@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 # Your NASA API Key
 API_KEY = "diNv0vCTVUTtrbM9wmSPbvgtgReflUM54F011kvD"
+
 BASE_URL = "https://api.nasa.gov/planetary/apod"
 
 
