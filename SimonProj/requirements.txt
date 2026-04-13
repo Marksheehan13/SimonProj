@@ -1,4 +1,4 @@
 flask
 psycopg[binary]
 requests
-python-dotenv
+python-dotenv,
