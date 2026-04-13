@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NASA Astronomy Picture of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0b0f1a;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #1f6feb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #1158c7;
+        }
+
+        img {
+            max-width: 80%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .description {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>NASA Astronomy Picture of the Day</h1>
+
+        <div>
+            <input type="date" id="dateInput">
+            <button onclick="searchByDate()">Search</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Load today's image on page load
+        window.onload = function() {
+            fetch("/")
+                .then(response => response.json())
+                .then(data => displayData(data));
+        };
+
+        function searchByDate() {
+            const date = document.getElementById("dateInput").value;
+
+            if (!date) {
+                alert("Please select a date.");
+                return;
+            }
+
+            fetch(`/search?date=${date}`)
+                .then(response => response.json())
+                .then(data => displayData(data));
+        }
+
+        function displayData(data) {
+            const resultDiv = document.getElementById("result");
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p>${data.error}</p>`;
+                return;
+            }
+
+            resultDiv.innerHTML = `
+                <h2>${data.title}</h2>
+                <p><strong>Date:</strong> ${data.date}</p>
+                ${data.media_type === "image" ?
+                    `<img src="${data.url}" alt="NASA APOD">` :
+                    `<iframe width="560" height="315" src="${data.url}" frameborder="0" allowfullscreen></iframe>`
+                }
+                <div class="description">
+                    <p>${data.explanation}</p>
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
