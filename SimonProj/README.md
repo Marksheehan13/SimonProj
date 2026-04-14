@@ -1,4 +1,21 @@
-# DeployHub — NASA APOD Integration Service
+## Group Information
+
+| Name         | Student Number |
+|--------------|----------------|
+| Ethan Nash   | 124465124      |
+| Mark Sheehan | 24387661       |
+| Adam Murphy  | 125125804      |
+| Calum Barry  | 124475352      |
+
+**Group Number:** 36
+
+**GitHub Repository:** https://github.com/Marksheehan13/SimonProj
+
+**Live Website:** https://simonproj.onrender.com/
+---
+
+# Deploy
+Hub — NASA APOD Integration Service
 
 A Flask-based web service that integrates the NASA Astronomy Picture of the Day (APOD) API with a PostgreSQL database. Built for IS2209 as a demonstration of CI/CD, DevOps, and Agile practices.
 

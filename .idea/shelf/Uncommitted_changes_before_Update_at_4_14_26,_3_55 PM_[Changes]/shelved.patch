@@ -1,0 +1,78 @@
+Index: Github/app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask\n\napp = Flask(__name__)\n\n\n@app.route('/')\ndef hello_world():  # put application's code here\n    return 'Hello World!'\n\n\nif __name__ == '__main__':\n    app.run()\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Github/app.py b/Github/app.py
+--- a/Github/app.py	(revision b9bf7b832912cbf25530623f3c2bcfb7157cd7d7)
++++ b/Github/app.py	(date 1772533033939)
+@@ -5,7 +5,7 @@
+ 
+ @app.route('/')
+ def hello_world():  # put application's code here
+-    return 'Hello World!'
++    return 'Hello there!'
+ 
+ 
+ if __name__ == '__main__':
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1776174677683)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1776174677683)
+@@ -0,0 +1,12 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredNames">
++        <list>
++          <option value="id" />
++        </list>
++      </option>
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1776174678885)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1776174678885)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"VcsDirectoryMappings\">\n    <mapping directory=\"$PROJECT_DIR$/newgit\" vcs=\"Git\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision b9bf7b832912cbf25530623f3c2bcfb7157cd7d7)
++++ b/.idea/vcs.xml	(date 1776174715785)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/newgit" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
