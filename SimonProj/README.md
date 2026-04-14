@@ -117,7 +117,7 @@ pytest tests/ -v --cov=app --cov-report=term-missing
 
 ## Deployment
 
-Live URL: `https://<your-deployment-url>`
+Live URL: `https://simonproj.onrender.com/`
 
 To deploy manually to Render:
 1. Connect your GitHub repo to [Render](https://render.com)
